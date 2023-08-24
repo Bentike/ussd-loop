@@ -5,12 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USSD || CODE</title>
     <style>
-        
-    </style>
+        body{
+            background-color: yellow;
+        }
+        button{
+            padding: 10px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            margin: 0 10px;
+            border-radius: 10px;
+            transition: all ease-in-out .3s;
+        }
+        button:hover{
+            background-color: black;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        </style>
 </head>
 <body>
     <h1>Welcome to Second Bank USSD</h1>
-
+    <div>
+        <h3>What Do You Want To Do</h3>
+        <p>Default password: <span>1234</span></p>
+        <div>
+            <button>Transfer</button>
+            <button>Airtime</button>
+            <button>Balance</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
