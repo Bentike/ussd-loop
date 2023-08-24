@@ -18,16 +18,25 @@ const transferMoney = () => {
   let pin = prompt("Enter your pin");
   if (pin === defaultPassword) {
     alert(
-      `You have successfully transfered #${amount} to ${recieverAccountNumber}`
-    );
-  } else {
-    while (count > 0 && pin !== defaultPassword) {
-      pin = prompt(
-        `Incorrect password, try again. you have ${count} attempt left`
+        `You have successfully transfered #${amount} to ${recieverAccountNumber}`
       );
-      count--;
+  } else {
+    while (count > 0 || pin !== defaultPassword) {
+      if (pin === defaultPassword) {
+        alert(
+            `You have successfully transfered #${amount} to ${recieverAccountNumber}`
+          );
+        break;
+      } else if (count == 0) {
+        alert("Too many attemps, Transaction cancelled");
+        break;
+      } else {
+        pin = prompt(
+          `Incorrect password, try again. you have ${count} attempt left`
+        );
+        count--;
+      }
     }
-    alert("Too many attemps, Transaction cancelled");
   }
 };
 
