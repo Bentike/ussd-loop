@@ -1,8 +1,36 @@
+let transfer = document.getElementById("transfer");
+let airtime = document.getElementById("airtime");
+let balance = document.getElementById("balance");
+
+// TRANSFER.
+transferMoney = () => {
+    let bank = prompt(
+      "Choose Beneficiary's Bank \n 1. GTB \n 2. Second Bank \n 3. Access"
+    );
+    let recieverAccountNumber = prompt("Enter Account Number");
+    let amount = prompt("Enter Amount");
+    alert(
+      "you are about to transfer " +
+        "#" +
+        amount +
+        " to " +
+        recieverAccountNumber
+    );
+    let pin = prompt("Enter your pin");
+    alert(
+      `You have successfully transfered #${amount} to ${recieverAccountNumber}`
+    );
+};
+
+
+
+transfer.addEventListener("click", transferMoney);
+
 // let ussdCode = prompt("Enter ussd Code");
 
 // let option = prompt("what do you want to do \n 1. Tranfers \n 2. Airtime \n 3. Balance");
 
-// // TRANSFER. 
+// // TRANSFER.
 // if(option === "1"){
 //     let bank = prompt("Choose Beneficiary's Bank \n 1. GTB \n 2. Second Bank \n 3. Access");
 //     let recieverAccountNumber = prompt("Enter Account Number");
@@ -28,7 +56,7 @@
 //             network = "AIRTEL";
 //             break;
 //         default:
-//             network = "MTN";    
+//             network = "MTN";
 
 //     }
 //     let number = prompt("Enter Receiver Mobile Number");
@@ -39,5 +67,3 @@
 
 // // CHECK BALANCE
 // option === "3" ? alert("Your account balance is #10,000") : "";
-
-
