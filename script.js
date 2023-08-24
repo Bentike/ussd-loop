@@ -20,19 +20,20 @@ const transferMoney = () => {
     alert(
       `You have successfully transfered #${amount} to ${recieverAccountNumber}`
     );
-  }else{
+  } else {
     while (count > 0 && pin !== defaultPassword) {
-        pin = prompt(
-          `Incorrect password, try again. you have ${count} attempt left`
-        );
-        count--;
-      }
-      alert("Too many attemps, Transaction cancelled");
+      pin = prompt(
+        `Incorrect password, try again. you have ${count} attempt left`
+      );
+      count--;
+    }
+    alert("Too many attemps, Transaction cancelled");
   }
 };
 
 //BuyAIRTIME, this function handles airtime purchase;
 const buyAirtime = () => {
+  let count = 3;
   let network = prompt("Select Network \n 1. MTN \n 2. GLO \n 3. AIRTEL");
   switch (network) {
     case "1":
@@ -50,9 +51,28 @@ const buyAirtime = () => {
   let number = prompt("Enter Receiver Mobile Number");
   let amount = prompt("Enter Card Amount");
   let confirmPin = prompt("Confirm your pin to continue");
-  alert(
-    `You have succesfully purchased #${amount} ${network} airtime for ${number}`
-  );
+  if (confirmPin === defaultPassword) {
+    alert(
+      `You have succesfully purchased #${amount} ${network} airtime for ${number}`
+    );
+  } else {
+    while (count > 0 || confirmPin !== defaultPassword) {
+      if (confirmPin === defaultPassword) {
+        alert(
+          `You have succesfully purchased #${amount} ${network} airtime for ${number}`
+        );
+        break;
+      } else if (count == 0) {
+        alert("Too many attemps, Transaction cancelled");
+        break;
+      } else {
+        confirmPin = prompt(
+          `Incorrect password, try again. you have ${count} attempt left`
+        );
+        count--;
+      }
+    }
+  }
 };
 
 // checkBalance, this method is called when user clicked on Balance button;
